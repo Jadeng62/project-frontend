@@ -1,0 +1,51 @@
+* {
+    background-color: antiquewhite;
+}
+
+
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* height: 100vh; */
+    border: solid black 2px ;
+}
+
+.navigation-header {
+    margin-bottom: 12px;
+}
+
+.navigation-ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    gap: 30px;
+   
+    
+}
+
+.navigation-li {
+    text-shadow: azure 2px, 2px, 2px;
+}
+
+.transaction-table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.transaction-th {
+    border: 1px solid rgb(243, 138, 138);
+    padding: 8px;
+    text-align: left;
+}
+
+.transaction-td {
+    border: 1px solid rgb(72, 60, 60);
+    padding: 8px;
+    text-align: left;
+}
