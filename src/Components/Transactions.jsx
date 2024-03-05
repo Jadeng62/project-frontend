@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 
 const Transactions = () => {
 const [transactionDisplay, setTransactionDisplay] = useState([])
-
 
 useEffect(() => {
     fetch(`http://localhost:3448/api/budgetingApp`)
@@ -25,17 +25,13 @@ useEffect(() => {
 }, [])
 
 
-const itemView = () => {
-
-}
-
   return (
     <div className='transactions'>
         <h3 className='transaction-header'>All Transactions:</h3>
         <table className='transaction-table'>
             <thead>
              <tr  className='transaction-tr'>
-                <th className='transaction-th' onClick>Item Name:</th>
+                <th className='transaction-th'>Item Name:</th>
                 <th className='transaction-th'>Amount:</th>
                 <th className='transaction-th'>Date of Transaction:</th>
                 <th className='transaction-th'>From:</th>
@@ -45,7 +41,7 @@ const itemView = () => {
             <tbody>
                  {transactionDisplay.map((transaction) => (
                     <tr key={transaction.id}  className='transaction-tr'>
-                        <td className='transaction-td'>{transaction.item_name}</td>
+                     <td className='transaction-td'> <Link to={`/transactions/${transaction.id}`}>{transaction.item_name}</Link> </td>
                         <td className='transaction-td'>{transaction.amount}</td>
                         <td className='transaction-td'>{transaction.date}</td>
                         <td className='transaction-td'>{transaction.from}</td>
